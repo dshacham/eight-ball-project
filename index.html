@@ -11,21 +11,25 @@
 
 <body>
 
-    <div class="ball">
+    <div class="wrapper">
         <h1>Magical 8 Ball</h1>
 
-        <section class="black-part">
-            <article class="white-part">
-
-            </article>
-        </section>
-
         <section class="question">
-            <form onsubmit="generateAnswer(); return false" action="#">
+            <form action="#">
+                <section class="ball">
+                    <input type="submit" id="ball">
+                    <article class="black-part">
+                        <article id="white-part">
+                            <p id="eight">8</p>
+                        </article>
+                        <article class="answers">
+                            <p id="answer"></p>
+                        </article>
+                    </article>
+                </section>
                 <label for="askSomething">
                     <input type="text" name="askSomething" id="askSomething" placeholder="Ask Something!" required>
                 </label>
-                <input type="submit" value="Send" id="submit">
             </form>
         </section>
     </div>
