@@ -15,7 +15,7 @@
         <h1>Magical 8 Ball</h1>
 
         <section class="question">
-            <form action="#">
+            <form onsubmit="ballAnimation()" action="#">
                 <section class="ball">
                     <input type="submit" id="ball">
                     <article class="black-part">
@@ -28,9 +28,10 @@
                     </article>
                 </section>
                 <label for="askSomething">
-                    <input type="text" name="askSomething" id="askSomething" placeholder="Ask Something!" required>
+                    <input type="text" name="askSomething" id="askSomething" placeholder="Ask Something!">
                 </label>
             </form>
+            <button id="res" onclick="ballBack()">Reset</button>
         </section>
     </div>
 

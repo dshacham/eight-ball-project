@@ -15,7 +15,7 @@ body {
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: 4rem;
     margin-top: 1rem;
 }
 
@@ -33,6 +33,7 @@ h1 {
     width: 20rem;
     height: 20rem;
     z-index: 11;
+    outline: none;
 }
 
 .black-part {
@@ -89,6 +90,11 @@ form {
     margin: 1rem auto;
 }
 
+.question {
+    display: flex;
+    flex-direction: column;
+}
+
 #askSomething {
     padding: 0.5rem 5rem 0.5rem 0.5rem;
     border-radius: 0.5rem;
@@ -101,4 +107,16 @@ form {
     color: rgb(65, 179, 255);
     font-size: 0.8rem;
     font-weight: bold;
+}
+
+#askSomething {
+    width: 100%;
+    margin: 1rem auto 0;
+    outline: none;
+}
+
+#res {
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+    align-self: flex-end;
 }

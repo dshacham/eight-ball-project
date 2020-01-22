@@ -8,9 +8,7 @@ const generateAnswer = () => {
 }
 
 const getAnswer = document.getElementById('answer');
-const insertAnswer = getAnswer.innerHTML = generateAnswer();
 const animation = document.getElementsByClassName('ball');
-
 
 const ballAnimation = () => {
     const ballShake = () => {
@@ -18,7 +16,6 @@ const ballAnimation = () => {
             { transform: 'translateY(-10px)' },
             { transform: 'translateY(20px)' }
         ], {
-            // timing options
             duration: 100,
             iterations: 5
         });
@@ -35,42 +32,43 @@ const ballAnimation = () => {
             if (opa === 0) {
                 fade.style.opacity = 0;
                 fadeIn[0].style.opacity = 1;
-                stop(id);
+                clearInterval(id);
             }
         }
     }
     fadeWhite();
+    getAnswer.innerHTML = generateAnswer();
 }
 
-// const ballBack = () => {
-//     const ballShakes = () => {
-//         animation[0].animate([
-//             { transform: 'translateY(-10px)' },
-//             { transform: 'translateY(20px)' }
-//         ], {
-//             // timing options
-//             duration: 100,
-//             iterations: 5
-//         });
+const ballBack = () => {
+    const ballShakes = () => {
+        animation[0].animate([
+            { transform: 'translateY(-10px)' },
+            { transform: 'translateY(20px)' }
+        ], {
+            duration: 100,
+            iterations: 5
+        });
 
-//     }
-//     ballShakes();
+    }
+    ballShakes();
 
-//     const fadeBack = () => {
-//         const fade = document.getElementById('white-part');
-//         const fadeIn = document.getElementsByClassName('answers');
-//         let opa = 0;
-//         let id = setInterval(frame, 5);
-//         function frame() {
-//             if (opa === 0) {
-//                 fadeIn[0].style.opacity = 0;
-//                 fade.style.opacity = 1;
-//                 stop(id);
-//             }
-//         }
-//     }
-//     fadeBack();
-// }
+    const fadeBack = () => {
+        const fade = document.getElementById('white-part');
+        const fadeIn = document.getElementsByClassName('answers');
+        let opa = 0;
+        let id = setInterval(frame, 5);
+        function frame() {
+            if (opa === 0) {
+                fadeIn[0].style.opacity = 0;
+                fade.style.opacity = 1;
+                clearInterval(id);
+            }
+        }
+    }
+    fadeBack();
+}
 
-const btn = document.getElementById('ball');
-btn.addEventListener("click", ballAnimation);
+// const btn = document.getElementById('ball');
+// btn.addEventListener("click", ballAnimation);
+
