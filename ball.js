@@ -9,6 +9,7 @@ const generateAnswer = () => {
 
 const getAnswer = document.getElementById('answer');
 const animation = document.getElementsByClassName('ball');
+// const btn = document.getElementById('ball');
 
 const ballAnimation = () => {
     const ballShake = () => {
@@ -19,7 +20,6 @@ const ballAnimation = () => {
             duration: 100,
             iterations: 5
         });
-
     }
     ballShake();
 
@@ -27,20 +27,17 @@ const ballAnimation = () => {
         const fade = document.getElementById('white-part');
         const fadeIn = document.getElementsByClassName('answers');
         const opa = 0;
-        let id = setInterval(frame, 5);
-        function frame() {
-            if (opa === 0) {
-                fade.style.opacity = 0;
-                fadeIn[0].style.opacity = 1;
-                clearInterval(id);
-            }
+        if (opa === 0) {
+            fade.style.opacity = 0;
+            fadeIn[0].style.opacity = 1;
+            // btn.removeEventListener("click", ballAnimation);
         }
     }
-    fadeWhite();
     getAnswer.innerHTML = generateAnswer();
+    fadeWhite();
 }
 
-const ballBack = () => {
+const ballReset = () => {
     const ballShakes = () => {
         animation[0].animate([
             { transform: 'translateY(-10px)' },
@@ -56,19 +53,23 @@ const ballBack = () => {
     const fadeBack = () => {
         const fade = document.getElementById('white-part');
         const fadeIn = document.getElementsByClassName('answers');
-        let opa = 0;
-        let id = setInterval(frame, 5);
-        function frame() {
-            if (opa === 0) {
-                fadeIn[0].style.opacity = 0;
-                fade.style.opacity = 1;
-                clearInterval(id);
-            }
+        let opa = 1;
+        if (opa === 1) {
+            fadeIn[0].style.opacity = 0;
+            fade.style.opacity = 1;
+            clearInterval(id);
         }
     }
     fadeBack();
 }
 
-// const btn = document.getElementById('ball');
-// btn.addEventListener("click", ballAnimation);
+const resetField = () => {
+    const resFunc = () => {
+        document.getElementById('askSomething').value = '';
+    }
+    resFunc();
+}
+
+const btn = document.getElementById('res');
+btn.addEventListener("click", resetField);
 
