@@ -14,25 +14,25 @@
     <div class="wrapper">
         <h1>Magic 8-Ball</h1>
 
-        <section class="question">
+        <div class="question">
             <form onsubmit="ballAnimation(); return false" action="#">
-                <section class="ball">
-                    <article class="black-part">
-                        <article id="white-part">
+                <div class="ball" role="img">
+                    <div class="black-part">
+                        <div id="white-part">
                             <p id="eight">8</p>
-                        </article>
-                        <article class="answers">
+                        </div>
+                        <div class="answers">
                             <p id="answer"></p>
-                        </article>
-                    </article>
-                </section>
-                <label for="askSomething">
+                        </div>
+                    </div>
+                </div>
+                <label for="askSomething" aria-label="Ask something!">
                     <input type="text" name="askSomething" id="askSomething" placeholder="Ask Something!">
                 </label>
                 <input type="submit" id="ball">
             </form>
             <button id="res" onclick="ballReset();">Reset</button>
-        </section>
+        </div>
     </div>
 
 

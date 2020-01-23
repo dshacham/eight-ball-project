@@ -1,15 +1,9 @@
-
-const generateAnswer = () => {
-    const answers = ['It is certain', 'It is decidedly so', 'Without a doubt', 'Yes, definitely', 'You may rely on it', 'As I see it, yes', 'Most likely', 'Outlook good', 'Yes', 'Signs point to yes', 'Reply hazy, try again', 'Ask again later', 'Better not tell you now', 'Cannot predict now', 'Concentrate and ask again', 'Don\'t count on it', 'My reply is no', 'My sources say no', 'Outlook not so good', 'Very doubtful'];
-
-    const randomAnswer = answers[Math.floor(answers.length * Math.random())];
-
-    return randomAnswer;
-}
-
+// grab the relevant elements
 const getAnswer = document.getElementById('answer');
 const animation = document.getElementsByClassName('ball');
-// const btn = document.getElementById('ball');
+const btn = document.getElementById('res');
+
+// define functions
 
 const ballAnimation = () => {
     const ballShake = () => {
@@ -35,6 +29,14 @@ const ballAnimation = () => {
     }
     getAnswer.innerHTML = generateAnswer();
     fadeWhite();
+}
+
+const generateAnswer = () => {
+    const answers = ['It is certain', 'It is decidedly so', 'Without a doubt', 'Yes, definitely', 'You may rely on it', 'As I see it, yes', 'Most likely', 'Outlook good', 'Yes', 'Signs point to yes', 'Reply hazy, try again', 'Ask again later', 'Better not tell you now', 'Cannot predict now', 'Concentrate and ask again', 'Don\'t count on it', 'My reply is no', 'My sources say no', 'Outlook not so good', 'Very doubtful'];
+
+    const randomAnswer = answers[Math.floor(answers.length * Math.random())];
+
+    return randomAnswer;
 }
 
 const ballReset = () => {
@@ -70,6 +72,7 @@ const resetField = () => {
     resFunc();
 }
 
-const btn = document.getElementById('res');
+
+// add event listener
 btn.addEventListener("click", resetField);
 
