@@ -71,8 +71,11 @@ h1 {
     color: rgb(65, 179, 255);
     font-size: 1rem;
     text-align: center;
-    width: 50%;
-    margin: 3.5rem auto;
+    width: 60%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .answers {
